@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Interview"
+  short_description: "Deep interview drills for experience files."
+  default_prompt: "Use this skill to scan a folder of experience files, then interview me deeply about one experience, theme, or role at a time. Track session notes, critique weak answers, record accepted improvements, summarize progress, and generate rewrite previews without directly overwriting source files."
