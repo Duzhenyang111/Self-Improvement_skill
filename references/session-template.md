@@ -20,6 +20,8 @@ Use this template for `deep-interview/sessions/<target-slug>.md`.
 ## Interview Progress
 - completed_dimensions:
 - current_dimension:
+- skipped_dimensions:
+- difficulty_level: basic | advanced | challenge
 - stop_rule_status:
 
 ## Confirmed Facts
@@ -37,22 +39,24 @@ Use this template for `deep-interview/sessions/<target-slug>.md`.
 ## Turn Log
 
 ### Turn 1
+- difficulty_level: basic | advanced | challenge
 - question:
-- interviewer_intent:
+- question_purpose:
 - user_answer_summary:
-- weaknesses:
-- advice:
+- gaps:
+- improvement_suggestions:
 - reference_answer_shape:
 - accepted_this_turn:
-- decision:
+- decision: incomplete | needs-polish | ready
 - next_question:
 
 ### Turn N
+- difficulty_level:
 - question:
-- interviewer_intent:
+- question_purpose:
 - user_answer_summary:
-- weaknesses:
-- advice:
+- gaps:
+- improvement_suggestions:
 - reference_answer_shape:
 - accepted_this_turn:
 - decision:

@@ -1,6 +1,6 @@
 # Role Mode
 
-Use this mode to reinterpret the user's directory through the lens of one target role.
+Use this mode to reinterpret the directory through the lens of one target role.
 
 ## Goal
 
@@ -8,11 +8,11 @@ Find which experiences best fit the role, then deepen the gaps that would matter
 
 ## Workflow
 
-1. define the target role
-2. identify likely evaluation criteria
-3. map existing files to those criteria
-4. ask one question at a time to close the most important gaps
-5. rank the strongest evidence for that role
+1. Define the target role
+2. Identify likely evaluation criteria
+3. Map existing files in `drafts/` to those criteria
+4. Ask one question at a time to close the most important gaps
+5. Rank the strongest evidence for that role
 
 ## Common Evaluation Lenses
 
@@ -27,10 +27,10 @@ Adjust the lens to the chosen role instead of using the same checklist blindly.
 
 ## Question Strategy
 
-Each question should reveal something an interviewer for that role would test. Examples:
+Each question should reveal something an interviewer for that role would test:
 
-- "What trade-off did you make that shows backend judgment?"
-- "How did you prioritize under delivery pressure?"
+- "What trade-off did I make that shows backend judgment?"
+- "How did I prioritize under delivery pressure?"
 - "What measurable outcome would a hiring manager care about here?"
 
 ## Output
@@ -47,4 +47,4 @@ Use [role-template.md](role-template.md) for the file structure.
 
 ## Stop Condition
 
-Stop when the user has enough role-specific material to answer common follow-ups without needing to reconstruct the story from scratch.
+Stop when there is enough role-specific material to answer common follow-ups without needing to reconstruct the story from scratch.

@@ -15,11 +15,23 @@ Use this template for `deep-interview/state.md`.
 - source_file:
 - target_scope:
 
+## Difficulty
+- current_level: basic | advanced | challenge
+- questions_at_current_level:
+- auto_advance: true
+
 ## Progress
 - completed_dimensions:
 - current_dimension:
-- session_file:
-- preview_file:
+- skipped_dimensions:
+  - dimension:
+    reason:
+
+## File Status
+- total_files:
+- copied_files:
+- converted_files:
+- skipped_files:
 
 ## Confirmed Facts
 - 
@@ -35,12 +47,8 @@ Use this template for `deep-interview/state.md`.
 
 ## Next Question
 - question:
-- interviewer_intent:
+- question_purpose:
 - why_now:
-
-## File Inventory
-- markdown_read:
-- non_markdown_found:
 
 ## Notes
 - 

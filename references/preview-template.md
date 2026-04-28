@@ -1,13 +1,14 @@
 # Preview Template
 
-Use this template for `deep-interview/previews/<target-slug>.md`.
+Use this template when generating comparison views in `deep-interview/sessions/<target-slug>-comparison.md`.
 
 ```md
-# Rewrite Preview: <target-slug>
+# Comparison: <target-slug>
 
 ## Source Mapping
-- source_file:
-- source_section:
+- original_file:
+- cache_file: deep-interview/cache/<filename>.md
+- draft_file: deep-interview/drafts/<filename>.md
 - generated_at:
 - based_on_session:
 
@@ -24,13 +25,25 @@ Use this template for `deep-interview/previews/<target-slug>.md`.
 - unresolved facts:
 - unconfirmed suggestions:
 
-## Preview Text
+## Comparison
 
-<rewrite preview here>
+### Section: <section-name>
+
+#### Original (from cache)
+> 
+
+#### Current (from drafts)
+> 
+
+#### Changes
+- Added:
+- Clarified:
+- Removed:
 
 ## Apply Notes
-- This is a preview only.
-- The original source file remains unchanged.
+- Changes are in `drafts/` files.
+- Original source files remain unchanged.
+- `cache/` files are read-only reference.
 ```
 
 ## Rules

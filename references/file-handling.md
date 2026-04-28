@@ -1,32 +1,58 @@
 # File Handling
 
-Use this note when the target directory contains files beyond Markdown.
+## Overview
 
-## Current Support
+All files are processed into a unified workflow with three layers:
 
-- `.md`: read directly and treat as primary source material.
+- **Original**: User's files remain untouched
+- **cache/**: Converted Markdown copies (read-only reference)
+- **drafts/**: Editable working copies (where all edits happen)
 
-## Reserved For Future Support
+For detailed conversion logic, see [file-conversion.md](file-conversion.md).
 
-If files such as `.docx`, `.pdf`, `.txt`, or exported images appear, do not ignore them. Record their presence during `scan`, but mark them as one of these states:
+## Supported Formats
 
-- `not-read`: present but not parsed yet
-- `text-extracted`: plain text successfully extracted
-- `needs-review`: binary or layout-heavy file where extraction may lose context
+### Direct Copy (no conversion needed)
 
-## Behavior Before Dedicated Readers Exist
+- `.md` - Markdown
+- `.txt` - Plain text
 
-1. Mention the file in `scan` output.
-2. Explain whether it was actually read or only discovered.
-3. Avoid merging unverified content into summaries or previews.
-4. Keep the rest of the workflow focused on the files that were actually parsed.
+### Converted via MarkItDown
 
-## Future Extension Path
+- `.pdf` - Portable Document Format
+- `.docx` - Microsoft Word
+- `.pptx` - Microsoft PowerPoint
+- `.xlsx` - Microsoft Excel
+- `.html` - Web pages
 
-When dedicated readers are later added, keep the same mode system and working area. Only expand the ingestion step:
+### Skipped (manual handling required)
 
-- `.pdf`: extract text and preserve page references when possible
-- `.docx`: extract headings, bullet structure, and paragraph text
-- images: use OCR only when the user explicitly wants it
+- `.jpg`, `.png` - Images (record existence, prompt user to describe)
+- Other unsupported formats (record existence, mark as `not-supported`)
 
-Any future extractor should feed normalized text into the same `scan`, `experience`, `theme`, `role`, `summarize`, and `finalize` flow.
+## Processing Flow
+
+### First Use
+
+1. Scan target directory for all files
+2. Convert non-Markdown files to `deep-interview/cache/`
+3. Copy all files (including native `.md`) to `deep-interview/drafts/`
+4. Record conversion state in `cache/_manifest.json`
+5. All subsequent reads use files from `drafts/`
+
+### Subsequent Use
+
+1. Read `cache/_manifest.json` for existing state
+2. Check for new or changed files (hash comparison)
+3. Process only new/changed files
+4. Sync new files to `drafts/`
+
+## Scan Output
+
+When scanning, report:
+
+- Total files found
+- Files copied directly (`.md`, `.txt`)
+- Files converted (`.pdf`, `.docx`, `.pptx`, `.xlsx`, `.html`)
+- Files skipped (images, unsupported)
+- Files failed (conversion errors)
